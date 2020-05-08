@@ -47,7 +47,9 @@ function App() {
           width: '125px',
           height: '46px',
           boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.26)',
-          textTransform: 'capitalize'
+          textTransform: 'capitalize',
+          marginTop:'8%',
+          marginBottom:'8%'
         },
       },
     },
@@ -118,16 +120,15 @@ function App() {
             <Button style={(servings==200)?{ border: '3px solid #0099FF'}:{}} className={"btn-group"} onClick={()=>handleServings(200)}>200 Serving</Button>
           </ThemeProvider>
         </ButtonGroup>       
-       
       </div>
       <div className="fourth-vertical">
-        <span className="annual">Annual</span><br></br><span className="fifty-off">50% off</span>
+        <span className="annual">Annual<br style={{margin:0,padding:0}}/><span className="fifty-off">50% off</span></span>
         <Switch
           checked={toggleSpan}
           onChange={handletoggleSpan}
-          color="primary"
           name="toggleSpan"
           inputProps={{ 'aria-label': 'primary checkbox' }}
+          style={{color:"#0099FF"}}
         />
         <span className="monthly">Monthly</span>        
       </div>
@@ -163,25 +164,25 @@ function App() {
         Here’s what our customers have to say 
       </p>
       <div className="seventh-vertical">
-        <div className="first-half">
+        <div className="first-half-2">
           <img src={require('./assets/images/face.png')}></img>
         </div>
-        <div className="second-half">
-          <Icon className="fas fa-quote-left" style={{position:'absolute',color:'#0099FF',marginTop:'1%',marginRigth:'10%'}} />
+        <div className="second-half-2">
+          <Icon className="fas fa-quote-left" style={{position:'absolute',color:'#0099FF',marginTop:'0.4%'}} />
           <p className="qoute-txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           <p className="raja-ram">Raja Ram</p>
           <p className="tip-world">Tip World</p>
         </div>      
       </div>
       <div className="eighth-vertical">
-        <div className="first-half">
+        <div className="first-half-2">
           <p className="loved-by-users-reco-copy-2">Loved by users,<br/>recommended by experts</p>
           <p className="lorem-ipsum-is-simpl-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           <div style={{float:'left'}}>
             <button className="bg cta-text">Primary CTA</button>{' '}
           </div>
         </div>
-        <div className="second-half">
+        <div className="second-half-2">
           <img src={require('./assets/images/Group 4/png/Group_4.png')}></img>
         </div>      
       </div>
