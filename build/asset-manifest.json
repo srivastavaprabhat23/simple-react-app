@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.27b489a0.chunk.css",
+    "main.js": "/static/js/main.bd1ebaee.chunk.js",
+    "main.js.map": "/static/js/main.bd1ebaee.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f3a02c50.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f3a02c50.js.map",
+    "static/js/2.ad6f70d6.chunk.js": "/static/js/2.ad6f70d6.chunk.js",
+    "static/js/2.ad6f70d6.chunk.js.map": "/static/js/2.ad6f70d6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c177624995d14b307dba21201f0ef5e3.js": "/precache-manifest.c177624995d14b307dba21201f0ef5e3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.27b489a0.chunk.css.map": "/static/css/main.27b489a0.chunk.css.map",
+    "static/js/2.ad6f70d6.chunk.js.LICENSE.txt": "/static/js/2.ad6f70d6.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/AktivGroteskCorp-Regular.b631071b.ttf",
+    "static/media/BG.png": "/static/media/BG.a4e9bd85.png",
+    "static/media/Group_6.png": "/static/media/Group_6.814e433d.png",
+    "static/media/face.png": "/static/media/face.b5b79a17.png",
+    "static/media/globe.png": "/static/media/globe.c5b434ce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3a02c50.js",
+    "static/js/2.ad6f70d6.chunk.js",
+    "static/css/main.27b489a0.chunk.css",
+    "static/js/main.bd1ebaee.chunk.js"
+  ]
+}
