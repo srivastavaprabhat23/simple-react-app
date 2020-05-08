@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -14,15 +14,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 function App() {
-
-  // const [state, setState] = React.useState({
-  //   toggleSpan: true,
-  //   servings:100,toggleSpan
-  //   lollipop:100,
-  //   iceCandy:200,
-  //   savings:100
-  // });
-
   const [toggleSpan,setToggleSpan]=useState(true);
   const [servings,setServings]=useState(100);
   const [lollipop,setLollipop]=useState(100);
@@ -31,23 +22,30 @@ function App() {
 
   const handletoggleSpan = (event) => {
     setToggleSpan(event.target.checked)
-    console.log(event.target.checked)
     if(event.target.checked){
-      console.log("yes")
       setLollipop(servings*1);
-      setIceCany(servings*2);    
-    }else{
-      console.log("no")
+      setIceCany(servings*2);
+      setSavings((servings*2)-(servings*1)) 
+    }else{      
       setLollipop(servings*0.5);
       setIceCany(servings*1);
+      setSavings((servings*1)-(servings*0.5))
     }
-    setSavings(iceCandy-lollipop);
-    // console.log(state)
   };
 
-  const handleServings=(event)=>{
-    console.log(event)
-    // setState({ ...state, servings: event });
+    
+
+  function handleServings(newServings){
+    setServings(newServings)
+    if(toggleSpan){
+      setLollipop(newServings*1);
+      setIceCany(newServings*2);
+      setSavings((newServings*2)-(newServings*1))
+    }else{      
+      setLollipop(newServings*0.5);
+      setIceCany(newServings*1);
+      setSavings((newServings*1)-(newServings*0.5))
+    }
   }
 
   return (
@@ -74,10 +72,10 @@ function App() {
         <p className="compare-pricing-toda">Compare pricing today!</p>
         <p className="lorem-ipsum-is-simpl">Lorem Ipsum is simply dummy text of the printing and <strong style={{color:'#0099FF'}}>typesetting.</strong></p>
         <ButtonGroup color="primary" aria-label="outlined primary button group">
-          <Button className={"btn-group","25"} name="25" component='span' onClick={handleServings}>25 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={handleServings}>50 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={handleServings}>100 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={handleServings}>200 Serving</Button>
+          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(25)}>25 Serving</Button>
+          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(50)}>50 Serving</Button>
+          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(100)}>100 Serving</Button>
+          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(200)}>200 Serving</Button>
         </ButtonGroup>       
        
       </div>
