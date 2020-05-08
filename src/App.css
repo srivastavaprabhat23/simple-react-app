@@ -56,6 +56,19 @@
        url('./assets/fonts/AktivGroteskCorp-Italic.ttf') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'AktivGrotesk-MediumItalic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/AktivGroteskCorp-MediumItalic.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('OpenSans'),
+       url('./assets/fonts/AktivGroteskCorp-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/AktivGroteskCorp-MediumItalic.woff') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/AktivGroteskCorp-MediumItalic.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/AktivGroteskCorp-MediumItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/AktivGroteskCorp-MediumItalic.ttf') format('svg'); /* Legacy iOS */
+}
+
 .looking-for-a-lollip {
   color: #31373D;
   font-family: 'AktivGrotesk-Bold';
@@ -283,4 +296,74 @@
 
 .savings-card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width:198px;
+}
+
+.sixth-vertical{
+  color: #31373D;
+  font-family: 'AktivGrotesk-Bold';
+  font-size: 24px;
+  /* font-weight: 700; */
+  line-height: 34px;
+  text-align: center;
+}
+
+.seventh-vertical{
+
+}
+
+.qoute-txt{
+  color: #8B8E91;
+  font-family: 'AktivGrotesk-MediumItalic';
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 22px;
+  width: 366px;
+  text-align: left;
+}
+
+.raja-ram {
+  color: #31373D;
+  font-family: 'AktivGrotesk-Bold';
+  font-size: 20px;
+  /* font-weight: 700; */
+  line-height: 34px;
+  text-align: left;
+
+  margin-bottom: 0;
+}
+
+.tip-world {
+  color: #31373D;
+  font-family: 'AktivGrotesk-Regular';
+  font-size: 20px;
+  /* font-weight: 400; */
+  line-height: 34px;
+  text-align: left;
+
+  margin-top: 0;
+}
+
+.eighth-vertical{
+
+}
+
+.loved-by-users-reco-copy-2 {
+  color: #31373D;
+  font-family: 'AktivGrotesk-Bold';
+  font-size: 30px;
+  /* font-weight: 700; */
+  line-height: 34px;
+  text-align: left;
+}
+
+.lorem-ipsum-is-simpl-2 {
+  color: #8B8E91;
+  font-family:'AktivGrotesk-Regular';
+  font-size: 16px;
+  /* font-weight: 400; */
+  line-height: 22px;
+  width: 387px;
+  text-align: left;
 }

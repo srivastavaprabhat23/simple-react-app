@@ -11,9 +11,48 @@ import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+//To load font awesome
+import { loadCSS } from 'fg-loadcss';
+import Icon from '@material-ui/core/Icon';
 
 
 function App() {
+  //Hook to get awesome fonts
+  useEffect(() => {
+    const node = loadCSS(
+      'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+      document.querySelector('#font-awesome-css'),
+    );
+
+    return () => {
+      node.parentNode.removeChild(node);
+    };
+  }, []);
+
+  const theme = createMuiTheme({
+    overrides: {
+      // Style sheet name ⚛️
+      MuiButton: {
+        // Name of the rule
+        text: {
+          // Some CSS
+          // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+          // borderRadius: 3,
+          border: 0,
+          // color: 'white',
+          // height: 48,
+          // padding: '0 30px',
+          backgroundColor: '#FFFFFF',
+          width: '125px',
+          height: '46px',
+          boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.26)',
+          textTransform: 'capitalize'
+        },
+      },
+    },
+  });
+
   const [toggleSpan,setToggleSpan]=useState(true);
   const [servings,setServings]=useState(100);
   const [lollipop,setLollipop]=useState(100);
@@ -71,11 +110,13 @@ function App() {
       <div className="third-vertical">
         <p className="compare-pricing-toda">Compare pricing today!</p>
         <p className="lorem-ipsum-is-simpl">Lorem Ipsum is simply dummy text of the printing and <strong style={{color:'#0099FF'}}>typesetting.</strong></p>
-        <ButtonGroup color="primary" aria-label="outlined primary button group">
-          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(25)}>25 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(50)}>50 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(100)}>100 Serving</Button>
-          <Button className={"btn-group","25"} name="25" component='span' onClick={()=>handleServings(200)}>200 Serving</Button>
+        <ButtonGroup color="primary" disableElevation={false} aria-label="outlined primary button group">
+          <ThemeProvider theme={theme}>
+            <Button style={(servings==25)?{ border: '3px solid #0099FF'}:{}} className={"btn-group"} onClick={()=>handleServings(25)}>25 Serving</Button>
+            <Button style={(servings==50)?{ border: '3px solid #0099FF'}:{}} className={"btn-group"} onClick={()=>handleServings(50)}>50 Serving</Button>
+            <Button style={(servings==100)?{ border: '3px solid #0099FF'}:{}} className={"btn-group"} onClick={()=>handleServings(100)}>100 Serving</Button>
+            <Button style={(servings==200)?{ border: '3px solid #0099FF'}:{}} className={"btn-group"} onClick={()=>handleServings(200)}>200 Serving</Button>
+          </ThemeProvider>
         </ButtonGroup>       
        
       </div>
@@ -108,15 +149,41 @@ function App() {
           </CardContent>
         </Card>
         <span className="savings-card">
-        <Card >
-          <CardContent>            
-            <p className="lollipop">Your savings
-              <br/>with lollipop</p><br/>
-              <span className="dolar-money" style={{color:'#0099FF'}}>${savings}</span>
-            <p className="per-span" style={{marginTop:0}}>Per {(toggleSpan)?'month':'annum'}</p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardContent>            
+              <p className="lollipop">Your savings
+                <br/>with lollipop</p><br/>
+                <span className="dolar-money" style={{color:'#0099FF'}}>${savings}</span>
+              <p className="per-span" style={{marginTop:0}}>Per {(toggleSpan)?'month':'annum'}</p>
+            </CardContent>
+          </Card>
         </span>
+      </div>
+      <p className="sixth-vertical">
+        Here’s what our customers have to say 
+      </p>
+      <div className="seventh-vertical">
+        <div className="first-half">
+          <img src={require('./assets/images/face.png')}></img>
+        </div>
+        <div className="second-half">
+          <Icon className="fas fa-quote-left" style={{position:'absolute',color:'#0099FF',marginTop:'1%',marginRigth:'10%'}} />
+          <p className="qoute-txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <p className="raja-ram">Raja Ram</p>
+          <p className="tip-world">Tip World</p>
+        </div>      
+      </div>
+      <div className="eighth-vertical">
+        <div className="first-half">
+          <p className="loved-by-users-reco-copy-2">Loved by users,<br/>recommended by experts</p>
+          <p className="lorem-ipsum-is-simpl-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <div style={{float:'left'}}>
+            <button className="bg cta-text">Primary CTA</button>{' '}
+          </div>
+        </div>
+        <div className="second-half">
+          <img src={require('./assets/images/Group 4/png/Group_4.png')}></img>
+        </div>      
       </div>
     </div>    
   );
